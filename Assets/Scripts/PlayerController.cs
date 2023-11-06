@@ -72,6 +72,10 @@ namespace TarodevController
             {
                 m_animator.SetTrigger("Attack");
             }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                GetComponent<PlayerStatus>().TakeDamage(20);
+            }
         }
 
         private void FixedUpdate()

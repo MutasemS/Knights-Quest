@@ -31,7 +31,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth); // Access the HealthBar script component directly
