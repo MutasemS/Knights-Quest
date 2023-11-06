@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public abstract class Entity : MonoBehaviour
 {
     public float health;
@@ -19,13 +18,13 @@ public abstract class Entity : MonoBehaviour
     public void damage(float d)
     {
         this.health -= d;
-        FindObjectOfType<AudioManager>().Play("Hurt");
+        //FindObjectOfType<AudioManager>().Play("Hurt");
         OnDamage();
-        if (this.health<=0)
+        if (this.health <= 0)
         {
             this.DestroyThis();
         }
-        
+
     }
     public abstract void DestroyThis();
     public abstract void OnDamage();
