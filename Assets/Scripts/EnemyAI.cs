@@ -52,6 +52,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
             Wander();
+            timer = wanderTimer;
         }
     }
 
@@ -59,9 +60,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.position) < 5f)
         {
-
             isChasing = true;
-            UpdatePath();
             return;
         }
 

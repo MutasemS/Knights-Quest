@@ -6226,11 +6226,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104096346046507237, guid: f430dadd4736f46c88ff94df00e34b56, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8233441447671018387, guid: f430dadd4736f46c88ff94df00e34b56, type: 3}
       propertyPath: maxX
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8233441447671018387, guid: f430dadd4736f46c88ff94df00e34b56, type: 3}
       propertyPath: maxY
