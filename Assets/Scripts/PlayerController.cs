@@ -15,7 +15,8 @@ namespace TarodevController
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
-
+        private bool attacking = false;
+        private bool attackDamageActive = false;
         private Vector3 initialPosition;
 
         #region Interface
@@ -70,11 +71,7 @@ namespace TarodevController
             }
             if (Input.GetMouseButtonDown(0))
             {
-                m_animator.SetTrigger("Attack");
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                GetComponent<PlayerStatus>().TakeDamage(20);
+                doAttack();
             }
         }
 
@@ -88,6 +85,10 @@ namespace TarodevController
             
             ApplyMovement();
             m_animator.SetFloat("AirSpeed", _rb.velocity.y);
+            if(attackDamageActive)
+            {
+                whileAttackDamage();
+            }
 
         }
 
@@ -182,7 +183,8 @@ namespace TarodevController
             _coyoteUsable = false;
             _frameVelocity.y = _stats.JumpPower;
             Jumped?.Invoke();
-            m_animator.SetTrigger("Jump");
+            if(!attacking)
+                m_animator.SetTrigger("Jump");
 
         }
 
@@ -230,6 +232,32 @@ namespace TarodevController
         }
 
         #endregion
+        public void startAttackDamage()
+        {
+            attackDamageActive = true;
+        }
+        public void endAttackDamage()
+        {
+            attackDamageActive = false;
+            attacking = false;
+        }
+        public void whileAttackDamage()
+        {
+            Debug.DrawRay(this.transform.position+0.8f*Vector3.up, new Vector3(-transform.localScale.x*_stats.attackRange,0,0), Color.green, 0.5f);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position+0.8f*Vector3.up, new Vector3(-transform.localScale.x,0,0), _stats.attackRange, LayerMask.GetMask("Enemy"));
+            if(hit.collider!=null && hit.collider.tag == "Enemy")
+            {
+                Destroy(hit.collider.gameObject);
+            }
+        }
+        private void doAttack()
+        {
+            if(!attacking)
+            {
+                attacking = true;
+                m_animator.SetTrigger("Attack");
+            }
+        }
 
         private void ApplyMovement() => _rb.velocity = _frameVelocity;
 

@@ -5525,7 +5525,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 915048920}
-  cameraFolllowSpeed: 0
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!1 &1863632719
 GameObject:
   m_ObjectHideFlags: 0
@@ -6089,9 +6092,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1041661592688090904, guid: f430dadd4736f46c88ff94df00e34b56, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7937608388169979899, guid: f430dadd4736f46c88ff94df00e34b56, type: 3}
       propertyPath: m_Name
       value: Enemy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937608388169979899, guid: f430dadd4736f46c88ff94df00e34b56, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7937608388169979899, guid: f430dadd4736f46c88ff94df00e34b56, type: 3}
       propertyPath: m_TagString

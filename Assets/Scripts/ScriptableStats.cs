@@ -52,5 +52,9 @@ namespace TarodevController
 
         [Tooltip("The amount of time we buffer a jump. This allows jump input before actually hitting the ground")]
         public float JumpBuffer = .2f;
+        [Tooltip("Attack Damage")]
+        public float attackDamage = 1f;
+        [Tooltip("Attack Range")]
+        public float attackRange = 1f;
     }
 }
