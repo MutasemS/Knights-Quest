@@ -3,13 +3,7 @@ using UnityEngine;
 
 namespace TarodevController
 {
-    /// <summary>
-    /// Hey!
-    /// Tarodev here. I built this controller as there was a severe lack of quality & free 2D controllers out there.
-    /// I have a premium version on Patreon, which has every feature you'd expect from a polished controller. Link: https://www.patreon.com/tarodev
-    /// You can play and compete for best times here: https://tarodev.itch.io/extended-ultimate-2d-controller
-    /// If you hve any questions or would like to brag about your score, come to discord: https://discord.gg/tarodev
-    /// </summary>
+
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
@@ -21,6 +15,8 @@ namespace TarodevController
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
+
+        private Vector3 initialPosition;
 
         #region Interface
 
@@ -37,9 +33,13 @@ namespace TarodevController
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
             m_animator = GetComponent<Animator>();
-
+            
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
+        }
+
+        private void Start(){
+            initialPosition = transform.position;
         }
 
         private void Update()
@@ -90,6 +90,24 @@ namespace TarodevController
             m_animator.SetFloat("AirSpeed", _rb.velocity.y);
 
         }
+
+
+       void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Die"))
+            {
+                // Invoke the ResetPosition method after a delay of 1 second.
+                Invoke("ResetPosition", 0.3f);
+            }
+        }
+
+        void ResetPosition()
+        {
+            // Reset the object's position to the initial position.
+            _rb.position = initialPosition;
+        }
+
+
 
         #region Collisions
         

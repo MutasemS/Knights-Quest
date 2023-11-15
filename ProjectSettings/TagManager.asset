@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LifeFlame
   - FlyingEnemy
+  - Die
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1326512269
+    locked: 0
+  - name: Traps
+    uniqueID: 2605004105
     locked: 0
