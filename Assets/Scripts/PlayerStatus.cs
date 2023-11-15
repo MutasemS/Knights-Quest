@@ -59,6 +59,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if(other.gameObject.CompareTag("FlyingEnemy")){
             TakeDamage(20);
+
         }
     }
 }
