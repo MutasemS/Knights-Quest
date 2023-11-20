@@ -57,3 +57,6 @@ TagManager:
   - name: Traps
     uniqueID: 2605004105
     locked: 0
+  - name: base
+    uniqueID: 3387291053
+    locked: 0
