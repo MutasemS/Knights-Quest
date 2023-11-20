@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraControllerPlayer : MonoBehaviour
 {
     public Transform target; // Reference to the player or object the camera is following
     public float minX, maxX, minY, maxY;
