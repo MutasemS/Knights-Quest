@@ -40,7 +40,7 @@ public class PlayerStatus : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        animator.SetTrigger("Hurt");
+        //animator.SetTrigger("Hurt");
         healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
