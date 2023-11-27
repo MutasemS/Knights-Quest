@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 338827092}
     - target: {fileID: 5842772507383061615, guid: bdee53507eb3bc84ab51570628057815, type: 3}
       propertyPath: initialHealth
-      value: 130
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8963896167071253560, guid: bdee53507eb3bc84ab51570628057815, type: 3}
       propertyPath: m_Constraints
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   attackDamage: 20
   enragedAttackDamage: 40
   attackOffset: {x: -1.5, y: 0.5, z: 0}
-  attackRange: 1.2
+  attackRange: 0.9
   attackMask:
     serializedVersion: 2
     m_Bits: 256
