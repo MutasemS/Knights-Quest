@@ -15,9 +15,11 @@ namespace TarodevController
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
-        private bool attacking = false;
-        private bool attackDamageActive = false;
+        public bool attacking = false;
+        public bool attackDamageActive = false;
         private Vector3 initialPosition;
+        [SerializeField]
+        private ParticleSystem attackParticleSystem;
 
         #region Interface
 
@@ -47,6 +49,10 @@ namespace TarodevController
         {
             _time += Time.deltaTime;
             GatherInput();
+            /*if(!attackDamageActive)
+            {
+                attackParticleSystem.Stop();
+            }*/
         }
 
         private void GatherInput()
@@ -235,6 +241,7 @@ namespace TarodevController
         public void startAttackDamage()
         {
             attackDamageActive = true;
+            attackParticleSystem.Play();
         }
         public void endAttackDamage()
         {
