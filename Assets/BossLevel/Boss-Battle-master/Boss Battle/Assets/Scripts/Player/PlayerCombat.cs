@@ -17,7 +17,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Attack();
+            GetComponent<Animator>().SetTrigger("Attack");
 
         }
 
@@ -25,7 +25,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
-        GetComponent<Animator>().SetTrigger("Attack");
+
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

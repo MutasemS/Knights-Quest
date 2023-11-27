@@ -21,7 +21,6 @@ public class BossWeapon : MonoBehaviour
 
 		if (colInfo != null)
 		{
-
 			colInfo.GetComponent<PlayerStatus>().TakeDamage(attackDamage);
 		}
 
