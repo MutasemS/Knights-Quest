@@ -3701,6 +3701,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 123079861559583940, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4932464188503327331, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_Name
       value: MovingPlatform (7)
@@ -3711,7 +3715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8692526849101329951, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.68
+      value: 8.99
       objectReference: {fileID: 0}
     - target: {fileID: 8692526849101329951, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4045,6 +4049,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 123079861559583940, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
+      propertyPath: yShift
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 123079861559583940, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
+      propertyPath: moveSpeed
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 4932464188503327331, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_Name
       value: MovingPlatform (5)
@@ -4055,7 +4067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8692526849101329951, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 8692526849101329951, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4336,6 +4348,7 @@ MonoBehaviour:
   maxX: 21.5
   minY: -1.25
   maxY: 10
+  zoomLevel: 5
 --- !u!1 &1950419158
 GameObject:
   m_ObjectHideFlags: 0
@@ -9311,6 +9324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 123079861559583940, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
+      propertyPath: moveSpeed
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 4932464188503327331, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_Name
       value: MovingPlatform (6)
@@ -9321,7 +9338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8692526849101329951, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.38
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 8692526849101329951, guid: ca2465d6c96cea74499341f5b2742f45, type: 3}
       propertyPath: m_LocalPosition.z
