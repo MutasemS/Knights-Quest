@@ -46,7 +46,6 @@ public class PlayerStatus : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-
         }
     }
 

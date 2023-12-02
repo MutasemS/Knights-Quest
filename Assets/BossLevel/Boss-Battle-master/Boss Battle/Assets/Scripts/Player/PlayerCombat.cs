@@ -6,41 +6,42 @@ public class PlayerCombat : MonoBehaviour
 {
     private Animator m_animator;
     public Transform attackPoint;
-
-    public float attackRange = 0.5f;
+    private TarodevController.ScriptableStats _stats;
 
     public LayerMask enemyLayers;
-
-    public int attackDamage = 20;
+    [SerializeField]
+    ParticleSystem attackParticleSystem;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<Animator>().SetTrigger("Attack");
-
+            m_animator.SetTrigger("Attack");
         }
 
+    }
+    private void Start() {
+        m_animator = GetComponent<Animator>();
+        _stats = GetComponent<TarodevController.PlayerController>()._stats;
     }
 
     void Attack()
     {
-
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        attackParticleSystem.Play();
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, _stats.attackRange, enemyLayers);
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyHealth>().TakeDamage(_stats.attackDamage);
         }
     }
 
-    void OnDrawGizmosSelected()
+    /*void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
             return;
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, _stats.attackRange);
 
-    }
+    }*/
 }

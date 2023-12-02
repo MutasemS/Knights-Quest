@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour
+public class BossHealth : EnemyHealth
 {
-
-	public int health = 500;
-
-	public GameObject deathEffect;
-
-	public bool isInvulnerable = false;
-
-	public void TakeDamage(int damage)
+	public new void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
 			return;
@@ -25,14 +19,8 @@ public class BossHealth : MonoBehaviour
 
 		if (health <= 0)
 		{
-			Die();
+			this.Die();
 		}
-	}
-
-	void Die()
-	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(gameObject);
 	}
 
 }

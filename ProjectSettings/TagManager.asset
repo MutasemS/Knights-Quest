@@ -8,6 +8,8 @@ TagManager:
   - FlyingEnemy
   - Die
   - Enemy
+  - Platform
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - Map
   - Enemy
-  - 
+  - Ground
   - 
   - 
   - 
@@ -59,4 +61,7 @@ TagManager:
     locked: 0
   - name: base
     uniqueID: 3387291053
+    locked: 0
+  - name: Particles
+    uniqueID: 4260969595
     locked: 0
