@@ -9,18 +9,14 @@ namespace TarodevController
     {
         private Animator m_animator;
 
-        [SerializeField] private ScriptableStats _stats;
+        [SerializeField] public ScriptableStats _stats;
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
-        public bool attacking = false;
-        public bool attackDamageActive = false;
         private Vector3 initialPosition;
-        [SerializeField]
-        private ParticleSystem attackParticleSystem;
-
+        
         #region Interface
 
         public Vector2 FrameInput => _frameInput.Move;
@@ -36,7 +32,6 @@ namespace TarodevController
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
             m_animator = GetComponent<Animator>();
-            
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
         }
@@ -49,10 +44,6 @@ namespace TarodevController
         {
             _time += Time.deltaTime;
             GatherInput();
-            /*if(!attackDamageActive)
-            {
-                attackParticleSystem.Stop();
-            }*/
         }
 
         private void GatherInput()
@@ -75,10 +66,6 @@ namespace TarodevController
                 _jumpToConsume = true;
                 _timeJumpWasPressed = _time;
             }
-            if (Input.GetMouseButtonDown(0))
-            {
-                doAttack();
-            }
         }
 
         private void FixedUpdate()
@@ -91,10 +78,6 @@ namespace TarodevController
             
             ApplyMovement();
             m_animator.SetFloat("AirSpeed", _rb.velocity.y);
-            if(attackDamageActive)
-            {
-                whileAttackDamage();
-            }
 
         }
 
@@ -189,8 +172,7 @@ namespace TarodevController
             _coyoteUsable = false;
             _frameVelocity.y = _stats.JumpPower;
             Jumped?.Invoke();
-            if(!attacking)
-                m_animator.SetTrigger("Jump");
+            m_animator.SetTrigger("Jump");
 
         }
 
@@ -238,34 +220,7 @@ namespace TarodevController
         }
 
         #endregion
-        public void startAttackDamage()
-        {
-            attackDamageActive = true;
-            attackParticleSystem.Play();
-        }
-        public void endAttackDamage()
-        {
-            attackDamageActive = false;
-            attacking = false;
-        }
-        public void whileAttackDamage()
-        {
-            Debug.DrawRay(this.transform.position+0.8f*Vector3.up, new Vector3(-transform.localScale.x*_stats.attackRange,0,0), Color.green, 0.5f);
-            RaycastHit2D hit = Physics2D.Raycast(transform.position+0.8f*Vector3.up, new Vector3(-transform.localScale.x,0,0), _stats.attackRange, LayerMask.GetMask("Enemy"));
-            if(hit.collider!=null && hit.collider.tag == "Enemy")
-            {
-                Destroy(hit.collider.gameObject);
-            }
-        }
-        private void doAttack()
-        {
-            if(!attacking)
-            {
-                attacking = true;
-                m_animator.SetTrigger("Attack");
-            }
-        }
-
+        
         private void ApplyMovement() => _rb.velocity = _frameVelocity;
 
 #if UNITY_EDITOR
