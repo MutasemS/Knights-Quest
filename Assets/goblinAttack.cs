@@ -53,7 +53,6 @@ public class GoblinAttack : MonoBehaviour
     {
         Debug.Log("Attack");
         isAttacking = true; // Set isAttacking to true
-        HaltMovement(); // Stop the goblin from moving
         // Set the attack trigger for the animation
         if (animator != null)
         {
@@ -73,11 +72,6 @@ public class GoblinAttack : MonoBehaviour
             Debug.Log("Player health: " + playerHealth.currentHealth);
             isAttacking = false; // Set isAttacking to false
         }
-    }
-
-    private void HaltMovement(){
-        // Set the velocity to 0
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;    
     }
 
     public bool getIsAttacking(){
