@@ -18,7 +18,7 @@ public class BossHealth : MonoBehaviour
 
 		health -= damage;
 
-		if (health <= 100)
+		if (health <= 60)
 		{
 			GetComponent<Animator>().SetBool("IsEnraged", true);
 		}
