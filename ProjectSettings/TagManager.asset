@@ -8,6 +8,8 @@ TagManager:
   - FlyingEnemy
   - Die
   - Enemy
+  - Ground
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - Map
   - Enemy
-  - 
+  - Ground
   - 
   - 
   - 
