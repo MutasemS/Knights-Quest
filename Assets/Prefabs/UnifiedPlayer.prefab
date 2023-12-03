@@ -4827,7 +4827,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -33997701
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4960,7 +4960,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1326512269
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300008, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5069,7 +5069,7 @@ MonoBehaviour:
   attackPoint: {fileID: 464079709957942980}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   attackParticleSystem: {fileID: 615619611625336068}
 --- !u!114 &3902633390575851444
 MonoBehaviour:
