@@ -2575,10 +2575,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 2394423131837750104, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+=======
+>>>>>>> a8ac96ac3dabf72aa19b395c355d96ea8da630a6
     - target: {fileID: 5842772507383061615, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: manaBar
       value: 
