@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int health = 500;
+	public int health = 500;
 
 	public GameObject deathEffect;
 
 	public bool isInvulnerable = false;
+	public Animator animator;
 
 	public void TakeDamage(int damage)
 	{
@@ -16,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
 			return;
 
 		health -= damage;
+
+
 
 		if (health <= 0)
 		{

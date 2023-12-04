@@ -11,15 +11,16 @@ TagManager:
   - FinalPosition
   - LifeFlame
   - ground
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Grid
   - 
   - 
   - 

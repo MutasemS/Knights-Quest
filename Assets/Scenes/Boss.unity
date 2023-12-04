@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2394423131837750104, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5842772507383061615, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: manaBar
       value: 
@@ -139,6 +143,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 338827092}
+    - target: {fileID: 6989763101874004579, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445958788185893816, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8990150447541579636, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7
@@ -182,6 +194,14 @@ PrefabInstance:
     - target: {fileID: 8995396396973363254, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995396396973363254, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995853511753765368, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -350,7 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93062262}
   - component: {fileID: 93062263}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 139153609}
   - component: {fileID: 139153610}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Hat-Helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,6 +754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlameOfLife (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8613873870869668320, guid: 3224e6264f7048f46b3e5cfd2b1a7992, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -828,7 +852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487631119}
   - component: {fileID: 487631120}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1408,7 +1432,7 @@ GameObject:
   - component: {fileID: 733200977}
   - component: {fileID: 733200976}
   - component: {fileID: 733200983}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1433,7 +1457,7 @@ MonoBehaviour:
   attackRange: 1.2
   attackMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8
 --- !u!114 &733200977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,7 +1707,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1292989701
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2403,7 +2427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806883122}
   - component: {fileID: 806883123}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Weapon-Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2826,6 +2850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlameOfLife
       objectReference: {fileID: 0}
+    - target: {fileID: 8613873870869668320, guid: 3224e6264f7048f46b3e5cfd2b1a7992, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3049,7 +3077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276518433}
   - component: {fileID: 1276518434}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Leg (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3132,7 +3160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307717171}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3347,7 +3375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382216656}
   - component: {fileID: 1382216657}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4099,7 +4127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1828803097}
   - component: {fileID: 1828803098}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
