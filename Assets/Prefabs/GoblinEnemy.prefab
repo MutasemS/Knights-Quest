@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1326512269
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -409500644, guid: a71688f042a091740b08b28fc3fe3cb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,12 +157,12 @@ MonoBehaviour:
   goblinAIState: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 0
   attackRange: 1.5
   attackDamage: 10
   playerLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!114 &3874110405246785263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +178,7 @@ MonoBehaviour:
   health: 60
   deathEffect: {fileID: 0}
   isInvulnerable: 0
+  animator: {fileID: 0}
 --- !u!61 &6407149135162377329
 BoxCollider2D:
   m_ObjectHideFlags: 0

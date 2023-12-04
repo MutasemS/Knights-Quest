@@ -353,7 +353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839042934068977393, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6862744912621972322, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Name
@@ -1796,7 +1796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839042934068977393, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6862744912621972322, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Name
@@ -2173,7 +2173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839042934068977393, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6862744912621972322, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Name
@@ -2235,14 +2235,22 @@ PrefabInstance:
     - target: {fileID: 5842772507383061615, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: manaBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 423417959}
     - target: {fileID: 5842772507383061615, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1950419160}
     - target: {fileID: 6989763101874004579, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: enemyLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963896167071253560, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
+      propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963896167071253560, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
+      propertyPath: m_Simulated
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8990150447541579636, guid: 2aeb33d249d83452baf458b629b9cb60, type: 3}
       propertyPath: m_LocalScale.x
