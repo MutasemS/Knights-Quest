@@ -21,9 +21,9 @@ public class Chest : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D()
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        if(!opened)
+        if(!opened && collider.gameObject.tag == "Player")
         {
             opened=true;
             chestAnim.SetTrigger("Open");
