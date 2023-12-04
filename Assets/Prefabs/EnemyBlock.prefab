@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102804683209460973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 3609249132931379217}
   - component: {fileID: 3162311728043689376}
   - component: {fileID: 3346164356352461585}
-  m_Layer: 0
+  - component: {fileID: 8176070784809383520}
+  m_Layer: 6
   m_Name: EnemySprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +107,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1326512269
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1970710632, guid: d4c983d43fb18f143bb3e4be04059032, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -217,7 +218,26 @@ MonoBehaviour:
   waypoints:
   - {fileID: 2102804683209460973}
   - {fileID: 7912186028510611161}
+  detectionRange: 10
+  target: {fileID: 0}
   speed: 0.05
+  nextWaypointDistance: 3
+--- !u!114 &8176070784809383520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839042934068977393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4e6985efe0f4da38b0a3530a8124c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  deathEffect: {fileID: 0}
+  isInvulnerable: 0
+  animator: {fileID: 5299599296242879400}
 --- !u!1 &6124404812210766419
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7912186028510611161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Waypoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -258,9 +278,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2844370103310241463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyBlock
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

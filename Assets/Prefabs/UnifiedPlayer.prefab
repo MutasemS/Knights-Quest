@@ -5069,7 +5069,7 @@ MonoBehaviour:
   attackPoint: {fileID: 464079709957942980}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   attackParticleSystem: {fileID: 615619611625336068}
 --- !u!114 &3902633390575851444
 MonoBehaviour:

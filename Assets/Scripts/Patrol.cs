@@ -142,6 +142,11 @@ public class Patrol : MonoBehaviour
         enemySprite.flipX = !enemySprite.flipX;
         isFacingRight = !isFacingRight;
     }
-
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerStatus>().TakeDamage(10);
+        }
+    }
 }
