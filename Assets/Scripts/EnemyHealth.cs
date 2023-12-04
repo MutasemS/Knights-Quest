@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
 	{
 		if (isInvulnerable)
 			return;
-
+		animator.SetTrigger("takeHit");
 		health -= damage;
 
 
@@ -28,7 +28,9 @@ public class EnemyHealth : MonoBehaviour
 
 	protected void Die()
 	{
-		//Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(gameObject);
+		animator.SetTrigger("Death");
+		float deathAnimationLength = animator.GetCurrentAnimatorStateInfo(2).length;
+		Destroy(gameObject, 3);
 	}
+
 }

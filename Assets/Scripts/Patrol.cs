@@ -15,6 +15,10 @@ public class Patrol : MonoBehaviour
     public float speed = 0.001f;
     private SpriteRenderer enemySprite;
     private bool isFacingRight = false;
+
+    public LayerMask attackMask;
+
+    public float attackRange = 2;
     Seeker seeker;
 
     Path path;
@@ -22,6 +26,9 @@ public class Patrol : MonoBehaviour
     bool reachedEndOfPath = false;
 
     public float nextWaypointDistance = 3f;
+    public Vector3 attackOffset;
+    public Animator animator;
+
 
     Rigidbody2D rb;
 
@@ -42,7 +49,6 @@ public class Patrol : MonoBehaviour
 
     void OnPathComplete(Path p)
     {
-        Debug.Log("Path found. Error: " + p.error);
         if (!p.error)
         {
             path = p;
@@ -67,6 +73,11 @@ public class Patrol : MonoBehaviour
             if (isChasing)
             {
                 chase();
+
+                if (Vector2.Distance(transform.position, target.position) <= attackRange)
+                {
+                    animator.SetTrigger("doAttack");
+                }
             }
             else
             {
@@ -144,9 +155,34 @@ public class Patrol : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerStatus>().TakeDamage(10);
         }
+    }
+
+
+    public void Attack()
+    {
+        Vector3 pos = transform.position;
+        pos += transform.right * attackOffset.x;
+        pos += transform.up * attackOffset.y;
+
+        Collider2D colInfo = Physics2D.OverlapCircle(pos, 20, attackMask);
+
+        if (colInfo != null)
+        {
+            colInfo.GetComponent<PlayerStatus>().TakeDamage(20);
+        }
+
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Vector3 pos = transform.position;
+        pos += transform.right * attackOffset.x;
+        pos += transform.up * attackOffset.y;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(pos, attackRange);
     }
 }
