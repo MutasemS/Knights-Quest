@@ -1761,6 +1761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 4456298100771915708, guid: 1d0efb712165f7b42a05e169ae5d5a3d, type: 3}
+      propertyPath: reward
+      value: 
+      objectReference: {fileID: 875560571794748280, guid: 632440971f5fb8d46bfe947f870e44aa, type: 3}
     - target: {fileID: 5214121952462022506, guid: 1d0efb712165f7b42a05e169ae5d5a3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.6949883
@@ -4833,7 +4837,7 @@ Transform:
   m_GameObject: {fileID: 1826706722}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7, y: -0.51, z: -9.55}
+  m_LocalPosition: {x: 3.18, y: 10.57, z: -9.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4852,10 +4856,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1573930363}
-  minX: 5.65
+  minX: 3.18
   maxX: 21.5
   minY: -1.25
-  maxY: 10
+  maxY: 10.5
   zoomLevel: 5
 --- !u!1 &1950419158
 GameObject:
