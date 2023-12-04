@@ -650,7 +650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839042934068977393, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6862744912621972322, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Name
@@ -1744,7 +1744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839042934068977393, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6862744912621972322, guid: e482300e414732e4c917c8efc2f7d12e, type: 3}
       propertyPath: m_Name
@@ -2176,7 +2176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13.9996, y: -5}
+  m_AnchoredPosition: {x: 13.999573, y: -5}
   m_SizeDelta: {x: 153.0005, y: 32.7998}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1401600870
