@@ -13,7 +13,7 @@ public class PlayerStatus : MonoBehaviour
 
     public HealthBar healthBar;
 
-    public HealthBar manaBar;
+    //public HealthBar manaBar;
 
     public Animator animator;
 
@@ -25,16 +25,13 @@ public class PlayerStatus : MonoBehaviour
         currentHealth = initialHealth;
         currentMana = initialMana;
         healthBar.SetMaxHealth(initialHealth);
-        manaBar.SetMaxHealth(initialMana);
+        //manaBar.SetMaxHealth(initialMana);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            useMana(10);
-        }
+     
     }
 
     public void TakeDamage(int damage)
@@ -70,11 +67,7 @@ public class PlayerStatus : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void useMana(int mana)
-    {
-        currentMana -= mana;
-        manaBar.SetHealth(currentMana);
-    }
+   
 
     void OnTriggerEnter2D(Collider2D other)
     {

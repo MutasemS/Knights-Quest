@@ -11,6 +11,8 @@ public class FallingBlock : MonoBehaviour
     private Rigidbody2D rb2D;
     private Vector3 initialPosition;
     private float gravityScale;
+    private AudioSource audioSource;
+    public AudioClip audioClip;
 
     void Start()
     {
@@ -18,6 +20,7 @@ public class FallingBlock : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
         rb2D.gravityScale *= fallSpeed;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TriggerFall()
@@ -41,5 +44,13 @@ public class FallingBlock : MonoBehaviour
 
         // Make the block kinematic again
         rb2D.isKinematic = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Die")
+        {
+            audioSource.PlayOneShot(audioClip);
+        }
     }
 }
