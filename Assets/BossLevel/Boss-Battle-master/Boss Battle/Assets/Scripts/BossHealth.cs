@@ -6,8 +6,9 @@ using UnityEngine;
 public class BossHealth : EnemyHealth
 {
 
-	public GameObject dropableItem;
-	public new void TakeDamage(int damage)
+	[SerializeField] 
+	GameObject dropableItem;
+	public override void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
 			return;
@@ -16,18 +17,19 @@ public class BossHealth : EnemyHealth
 
 		if (health <= 60)
 		{
-			GetComponent<Animator>().SetBool("IsEnraged", true);
+			this.animator.SetBool("IsEnraged", true);
 		}
 
 		if (health <= 0)
 		{
 			this.Die();
-			newDie();
 		}
 	}
+	protected override void Die()
+	{
+		Instantiate(dropableItem, this.transform.position + Vector3.up, this.transform.rotation);
+		Destroy(this.gameObject);
 
-	private void newDie(){
-		Instantiate(dropableItem, transform.position, Quaternion.identity);
 	}
 
 }
