@@ -1473,6 +1473,8 @@ MonoBehaviour:
   health: 200
   deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338, type: 3}
   isInvulnerable: 0
+  animator: {fileID: 0}
+  dropableItem: {fileID: 738977916637821273, guid: d3412aa0e25e0bb44a0201ecd2f284d5, type: 3}
 --- !u!114 &733200978
 MonoBehaviour:
   m_ObjectHideFlags: 0

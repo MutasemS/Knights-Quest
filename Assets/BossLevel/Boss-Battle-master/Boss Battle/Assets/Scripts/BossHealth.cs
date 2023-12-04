@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BossHealth : EnemyHealth
 {
+
+	public GameObject dropableItem;
 	public new void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
@@ -20,7 +22,12 @@ public class BossHealth : EnemyHealth
 		if (health <= 0)
 		{
 			this.Die();
+			newDie();
 		}
+	}
+
+	private void newDie(){
+		Instantiate(dropableItem, transform.position, Quaternion.identity);
 	}
 
 }
