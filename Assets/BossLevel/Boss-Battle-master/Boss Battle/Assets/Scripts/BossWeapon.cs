@@ -10,6 +10,7 @@ public class BossWeapon : MonoBehaviour
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;
+<<<<<<< HEAD
 	private AudioSource audioSource;
 	public AudioClip attackSound;
 
@@ -17,6 +18,10 @@ public class BossWeapon : MonoBehaviour
 	{
 		audioSource = GetComponent<AudioSource>();
 	}
+=======
+	public AudioSource audioSource;
+	public AudioClip attackSound;
+>>>>>>> refs/remotes/origin/main
 
 	public void Attack()
 	{
@@ -27,11 +32,12 @@ public class BossWeapon : MonoBehaviour
 		pos += transform.up * attackOffset.y;
 
 		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-
 		if (colInfo != null)
 		{
 			colInfo.GetComponent<PlayerStatus>().TakeDamage(attackDamage);
 		}
+
+		audioSource.PlayOneShot(attackSound);
 
 	}
 
@@ -43,10 +49,12 @@ public class BossWeapon : MonoBehaviour
 		pos += transform.up * attackOffset.y;
 
 		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+		audioSource.Play();
 		if (colInfo != null)
 		{
 			colInfo.GetComponent<PlayerStatus>().TakeDamage(enragedAttackDamage);
 		}
+		audioSource.PlayOneShot(attackSound);
 	}
 
 	void OnDrawGizmosSelected()

@@ -6,9 +6,13 @@ using UnityEngine;
 public class BossHealth : EnemyHealth
 {
 
-	[SerializeField] 
+	[SerializeField]
 	GameObject dropableItem;
+<<<<<<< HEAD
 	
+=======
+	[SerializeField] GameObject Youwin;
+>>>>>>> refs/remotes/origin/main
 	public override void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
@@ -24,6 +28,8 @@ public class BossHealth : EnemyHealth
 		if (health <= 0)
 		{
 			this.Die();
+			Youwin.SetActive(true);
+			Time.timeScale = 0;
 		}
 	}
 	protected override void Die()

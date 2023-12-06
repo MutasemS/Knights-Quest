@@ -10,6 +10,9 @@ public class PlayerCombat : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip attackSound;
 
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+
     public LayerMask enemyLayers;
     [SerializeField]
     ParticleSystem attackParticleSystem;
@@ -26,8 +29,13 @@ public class PlayerCombat : MonoBehaviour
         }
 
     }
+<<<<<<< HEAD
     private void Start() {
         audioSource = GetComponent<AudioSource>();
+=======
+    private void Start()
+    {
+>>>>>>> refs/remotes/origin/main
         m_animator = GetComponent<Animator>();
         _stats = GetComponent<TarodevController.PlayerController>()._stats;
     }
@@ -41,6 +49,7 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<EnemyHealth>().TakeDamage(_stats.attackDamage);
         }
+        audioSource.PlayOneShot(attackSound);
     }
 
     /*void OnDrawGizmosSelected()
