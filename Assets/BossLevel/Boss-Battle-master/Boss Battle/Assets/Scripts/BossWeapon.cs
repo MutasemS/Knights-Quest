@@ -10,7 +10,6 @@ public class BossWeapon : MonoBehaviour
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;
-<<<<<<< HEAD
 	private AudioSource audioSource;
 	public AudioClip attackSound;
 
@@ -18,10 +17,7 @@ public class BossWeapon : MonoBehaviour
 	{
 		audioSource = GetComponent<AudioSource>();
 	}
-=======
-	public AudioSource audioSource;
-	public AudioClip attackSound;
->>>>>>> refs/remotes/origin/main
+
 
 	public void Attack()
 	{

@@ -8,11 +8,9 @@ public class BossHealth : EnemyHealth
 
 	[SerializeField]
 	GameObject dropableItem;
-<<<<<<< HEAD
-	
-=======
+
 	[SerializeField] GameObject Youwin;
->>>>>>> refs/remotes/origin/main
+
 	public override void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
