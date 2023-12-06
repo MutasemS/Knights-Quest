@@ -7,20 +7,27 @@ public class PlayerCombat : MonoBehaviour
     private Animator m_animator;
     public Transform attackPoint;
     private TarodevController.ScriptableStats _stats;
+    private AudioSource audioSource;
+    public AudioClip attackSound;
 
     public LayerMask enemyLayers;
     [SerializeField]
     ParticleSystem attackParticleSystem;
 
+
+
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             m_animator.SetTrigger("Attack");
+            audioSource.PlayOneShot(attackSound);
         }
 
     }
     private void Start() {
+        audioSource = GetComponent<AudioSource>();
         m_animator = GetComponent<Animator>();
         _stats = GetComponent<TarodevController.PlayerController>()._stats;
     }

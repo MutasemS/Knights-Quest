@@ -8,6 +8,7 @@ public class BossHealth : EnemyHealth
 
 	[SerializeField] 
 	GameObject dropableItem;
+	
 	public override void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
@@ -27,6 +28,7 @@ public class BossHealth : EnemyHealth
 	}
 	protected override void Die()
 	{
+		
 		Instantiate(dropableItem, this.transform.position + Vector3.up, this.transform.rotation);
 		Destroy(this.gameObject);
 

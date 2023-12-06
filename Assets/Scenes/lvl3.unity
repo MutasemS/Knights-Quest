@@ -3634,7 +3634,7 @@ MonoBehaviour:
   player: {fileID: 997802344}
   boulderSound: {fileID: 8300000, guid: 2c21f8ce429412445b9475812347e413, type: 3}
   screenShakeDuration: 0.1
-  screenShakeIntensity: 0.05
+  screenShakeIntensity: 0.2
 --- !u!82 &1543660294
 AudioSource:
   m_ObjectHideFlags: 0

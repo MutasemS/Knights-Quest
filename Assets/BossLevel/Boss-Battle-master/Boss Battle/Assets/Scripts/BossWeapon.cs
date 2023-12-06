@@ -10,9 +10,18 @@ public class BossWeapon : MonoBehaviour
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;
+	private AudioSource audioSource;
+	public AudioClip attackSound;
+
+	void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
+	}
 
 	public void Attack()
 	{
+		audioSource.PlayOneShot(attackSound);
+
 		Vector3 pos = transform.position;
 		pos += transform.right * attackOffset.x;
 		pos += transform.up * attackOffset.y;

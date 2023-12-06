@@ -44,7 +44,7 @@ public class pendulum : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<PlayerStatus>().TakeDamage(100);
         }
     }
 }
