@@ -8,6 +8,9 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     private TarodevController.ScriptableStats _stats;
 
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+
     public LayerMask enemyLayers;
     [SerializeField]
     ParticleSystem attackParticleSystem;
@@ -20,7 +23,8 @@ public class PlayerCombat : MonoBehaviour
         }
 
     }
-    private void Start() {
+    private void Start()
+    {
         m_animator = GetComponent<Animator>();
         _stats = GetComponent<TarodevController.PlayerController>()._stats;
     }
@@ -34,6 +38,7 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<EnemyHealth>().TakeDamage(_stats.attackDamage);
         }
+        audioSource.PlayOneShot(attackSound);
     }
 
     /*void OnDrawGizmosSelected()
