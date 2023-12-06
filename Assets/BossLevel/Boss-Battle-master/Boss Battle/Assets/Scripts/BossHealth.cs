@@ -9,7 +9,6 @@ public class BossHealth : EnemyHealth
 	[SerializeField]
 	GameObject dropableItem;
 
-	[SerializeField] GameObject Youwin;
 
 	public override void TakeDamage(int damage)
 	{
@@ -26,13 +25,11 @@ public class BossHealth : EnemyHealth
 		if (health <= 0)
 		{
 			this.Die();
-			Youwin.SetActive(true);
-			Time.timeScale = 0;
 		}
 	}
 	protected override void Die()
 	{
-		
+
 		Instantiate(dropableItem, this.transform.position + Vector3.up, this.transform.rotation);
 		Destroy(this.gameObject);
 

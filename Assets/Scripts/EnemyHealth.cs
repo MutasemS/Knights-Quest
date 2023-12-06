@@ -13,7 +13,8 @@ public class EnemyHealth : MonoBehaviour
 	private AudioSource audioSource;
 	public AudioClip dieSound;
 
-	void Start() {
+	void Start()
+	{
 		audioSource = GetComponent<AudioSource>();
 		animator = this.gameObject.GetComponent<Animator>();
 	}
@@ -21,9 +22,9 @@ public class EnemyHealth : MonoBehaviour
 	{
 		if (isInvulnerable)
 			return;
+
 		animator.SetTrigger("takeHit");
 		health -= damage;
-
 		if (health <= 0)
 		{
 			Die();
@@ -34,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
 	{
 		animator.SetTrigger("Death");
 		audioSource.PlayOneShot(dieSound);
-//		float deathAnimationLength = animator.GetCurrentAnimatorStateInfo(2).length;
+		//		float deathAnimationLength = animator.GetCurrentAnimatorStateInfo(2).length;
 		Destroy(gameObject, 3);
 	}
 
