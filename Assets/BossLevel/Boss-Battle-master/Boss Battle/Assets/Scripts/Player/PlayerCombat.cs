@@ -29,6 +29,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         m_animator = GetComponent<Animator>();
         _stats = GetComponent<TarodevController.PlayerController>()._stats;
     }
@@ -42,7 +43,7 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<EnemyHealth>().TakeDamage(_stats.attackDamage);
         }
-        audioSource.PlayOneShot(attackSound);
+    
     }
 
     /*void OnDrawGizmosSelected()
